@@ -21,7 +21,7 @@ gem "jquery-rails", "~> 4.4"
 
 ## 2. Defining the model
 
-<p align="center"><img width="50%" src="/assets/images/post_model.png"></p>
+<p align="center"><img width="50%" src="app/assets/images/post_model.png"></p>
 
 ## 3. Implementing the CRUD
 
