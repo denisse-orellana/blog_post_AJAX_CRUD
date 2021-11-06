@@ -47,7 +47,7 @@ Home will be the controller that will display the index and it's generated as:
 rails g controller Home index
 ```
 
-The controller Post is also generated adn will be the one where the CRUD is going to take form.
+The controller Post is also generated and will be the one where the CRUD is going to take form.
 
 ```console
 rails g controller Post
