@@ -4,6 +4,8 @@ This project presents a simple blog post developing the CRUD (Create, Read, Upda
 
 ## 1. Adding Bootstrap
 
+First, the next gems are integrated and bundled:
+
 ```ruby
 # gemfile.rb
 
@@ -11,12 +13,22 @@ gem "bootstrap", "~> 5.1"
 gem "jquery-rails", "~> 4.4"
 ```
 
+Then, in the javascript manifest the Bootstrap is require as:
+
 ```javascript
 // application.js
 
 //= require jquery
 //= require popper
 //= require bootstrap
+```
+
+And finally, Bootstrap is called from the SCSS file in the main view:
+
+```css
+/* home.scss */
+
+@import 'bootstrap';
 ```
 
 ## 2. Defining the model
