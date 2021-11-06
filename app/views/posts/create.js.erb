@@ -1,0 +1,4 @@
+// To show post in index and hide the form
+$('#posts').prepend('<%= j render(@post, post: @post) %>')
+$('#form').empty(500) // .hide()
+$('#button').show(500)

@@ -1,0 +1,37 @@
+<h1>Tweets</h1>
+
+<%= form_with(url: "", method: :get, remote: true, class: "form-inline") do %>
+    <%= text_field_tag :q, "", class: "mr-sm-1" %>
+    <%= submit_tag("Search", class: "btn btn-outline-success my-1 my-sm-0") %>
+<% end %>
+
+<div id="form"></div>
+
+<div id="showTweet"></div>
+
+<table class="table">
+    <thead class="table-light">
+      <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Content</th>
+          <th scope="col" colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody id="posts">
+        <% @posts.each do |post| %>
+            <tr id="post-<%= post.id %>">
+                <td><%= post.id %></td>
+                <td><%= post.title %></td>
+                <td><%= post.content %></td>
+                <td><%= link_to 'See', post, remote: true, class: 'btn btn-success' %></td>
+                <td><%= link_to 'Edit', edit_post_path(post), remote: true, class: 'btn btn-warning' %></td>
+                <td><%= link_to 'Delete', post, method: :delete, remote: true, data: { confirm: "Are you sure to delete: #{post.title}?" }, class: 'btn btn-danger' %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<div id="button">
+    <%= link_to 'New post', new_post_path, class: 'btn btn-primary', remote: true %>
+</div>

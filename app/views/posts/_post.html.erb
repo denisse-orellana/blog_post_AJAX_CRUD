@@ -1,0 +1,9 @@
+<tr id="post-<%= post.id %>">
+    <th scope="row">1</th>
+    <td><%= post.id %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= link_to 'See', post, remote: true, class: 'btn btn-success' %></td>
+    <td><%= link_to 'Edit', edit_post_path(post), remote: true, class: 'btn btn-warning' %></td>
+    <td><%= link_to 'Delete', post, method: :delete, remote: true, data: { confirm: "Are you sure to delete: #{post.title}?" }, class: 'btn btn-danger' %></td>
+</tr>
