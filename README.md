@@ -13,7 +13,7 @@ gem "bootstrap", "~> 5.1"
 gem "jquery-rails", "~> 4.4"
 ```
 
-Then, in the javascript manifest the Bootstrap is require as:
+Then, in the javascript manifest Bootstrap is require as:
 
 ```javascript
 // application.js
@@ -23,7 +23,7 @@ Then, in the javascript manifest the Bootstrap is require as:
 //= require bootstrap
 ```
 
-And finally, Bootstrap is called from the SCSS file in the main view:
+And finally, it is called from the SCSS file in the main view:
 
 ```css
 /* home.scss */
