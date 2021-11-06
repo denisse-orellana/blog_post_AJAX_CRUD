@@ -35,6 +35,24 @@ And finally, it is called from the SCSS file in the main view:
 
 <p align="center"><img width="30%" src="app/assets/images/post_model.png"></p>
 
+The previews image summarize the model and it is generated as it follows from the console:
+
+```console
+rails g model Post title content:text
+```
+
+Home will be the controller that will display the index and it's generated as:
+
+```console
+rails g controller Home index
+```
+
+The controller Post is also generated adn will be the one where the CRUD is going to take form.
+
+```console
+rails g controller Post
+```
+
 ## 3. Implementing the CRUD
 
 ### 3.1 Index
