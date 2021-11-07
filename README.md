@@ -2,6 +2,19 @@
 
 This project presents a simple blog post developing the CRUD (Create, Read, Update and Delete) from zero with AJAX (Asynchronous JavaScript and XML) without the use of scaffold.
 
+## Table of contents
+
+* [1. Adding Bootstrap](#1-adding-bootstrap)
+* [2. Defining the model](#2-defining-the-model)
+* [3. Implementing the CRUD](#3-implementing-the-crud)
++ [3.1 Index](#31-index)
++ [3.2 Show](#32-show)
++ [3.3 Create](#33-create)
++ [3.4 Edit](#34-edit)
++ [3.5 Update](#35-update)
++ [3.6 Delete](#36-delete)
+* [4. Adding the Search bar](#4-adding-the-search-bar)
+
 ## 1. Adding Bootstrap
 
 First, the next gems are integrated and bundled:
