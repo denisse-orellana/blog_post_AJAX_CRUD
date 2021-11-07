@@ -297,9 +297,43 @@ end
 The destroy.js will delete the indicated post:
 
 ```javascript
-// posts/update.js.erb
+// posts/destroy.js.erb
 
 $('#post-<%= @post.id %>').empty();
 ```
 
 ## 4. Adding the Search bar
+
+The search bar is added to the beginning of the Index page as:
+
+```ruby
+<%= form_with(url: "", method: :get, remote: true, class: "form-inline") do %>
+    <%= text_field_tag :q, "", class: "mr-sm-1" %>
+    <%= submit_tag("Search", class: "btn btn-outline-success my-1 my-sm-0") %>
+<% end %>
+```
+
+Then, a new partial for the searched posts is created:
+
+```ruby
+# posts/_posts.html.erb
+
+<% @posts.each do |post| %>
+    <tr id="post-<%= post.id %>">
+        <td><%= post.id %></td>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to 'See', post, remote: true, class: 'btn btn-success' %></td>
+        <td><%= link_to 'Edit', edit_post_path(post), remote: true, class: 'btn btn-warning' %></td>
+        <td><%= link_to 'Delete', post, method: :delete, remote: true, data: { confirm: "Are you sure to delete: #{post.title}?" }, class: 'btn btn-danger' %></td>
+    </tr>
+<% end %>
+```
+
+Finally, the id **"posts"** from the Index will render the searched keyword just as:
+
+```javascript
+// home/index.js.erb
+
+$('#posts').html('<%= escape_javascript render('posts/posts') %>')
+```
