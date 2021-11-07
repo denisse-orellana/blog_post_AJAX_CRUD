@@ -72,7 +72,7 @@ application.css
 
 ## 2. Defining the model
 
-<p align="center"><img width="30%" src="app/assets/images/post_model.png"></p>
+<p align="center"><img width="30%" src="/app/assets/images/post_model.png"></p>
 
 The previews image summarize the model and it is generated as it follows from the console:
 
