@@ -28,6 +28,7 @@ This project presents a simple blog post developing the CRUD (Create, Read, Upda
 gem "bootstrap", "~> 5.1"
 gem "jquery-rails", "~> 4.4"
 gem "faker", "~> 2.19"
+gem "font-awesome-rails"
 ```
 
 ## 1. Adding Bootstrap
@@ -39,6 +40,7 @@ First, the next gems are integrated and bundled:
 
 gem "bootstrap", "~> 5.1"
 gem "jquery-rails", "~> 4.4"
+gem "font-awesome-rails"
 ```
 
 Then, in the javascript manifest Bootstrap is require as:
@@ -51,12 +53,21 @@ Then, in the javascript manifest Bootstrap is require as:
 //= require bootstrap
 ```
 
-And finally, it is called from the SCSS file in the main view:
+And finally, it is called from the stylesheets files:
+
+```css
+/*
+application.css 
+
+*= require font-awesome
+*/
+```
 
 ```css
 /* home.scss */
 
 @import 'bootstrap';
+@import "font-awesome";
 ```
 
 ## 2. Defining the model
