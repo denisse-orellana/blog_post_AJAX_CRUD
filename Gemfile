@@ -68,3 +68,6 @@ gem "jquery-rails", "~> 4.4"
 gem "faker", "~> 2.19"
 
 gem "font-awesome-rails"
+
+gem 'sqlite3', group: :development
+gem 'pg', group: :production
