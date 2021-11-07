@@ -5,7 +5,7 @@ This project presents a simple blog post developing the CRUD (Create, Read, Upda
 ## Table of contents
 
 * [Ruby & Rails version](#ruby-&-rails-version)
-   + [Gems](#gems-version)
+   + [Gems version](#gems-version)
 * [1. Adding Bootstrap](#1-adding-bootstrap)
 * [2. Defining the model](#2-defining-the-model)
 * [3. Implementing the CRUD](#3-implementing-the-crud)
