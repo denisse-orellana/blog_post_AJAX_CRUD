@@ -330,7 +330,7 @@ Then, a new partial for the searched posts is created:
 <% end %>
 ```
 
-Finally, the id **"posts"** from the Index will render the searched keyword just as:
+Finally, the id **"posts"** from the Index will render the post searched by the keyword just as:
 
 ```javascript
 // home/index.js.erb
