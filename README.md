@@ -84,7 +84,7 @@ The previews image summarize the model and it is generated as it follows from th
 rails g model Post title content:text
 ```
 
-Home will be the controller that will display the index and it's generated as:
+Home will be the controller that will display the posts and it's generated as:
 
 ```console
 rails g controller Home index
