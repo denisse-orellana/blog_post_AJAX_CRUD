@@ -166,6 +166,8 @@ In the HTML the information is seen as:
 
 ### 3.2 Show
 
+From the controller the action show is setted as:
+
 ```ruby
 # posts_controller.rb
 
@@ -184,6 +186,14 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:content, :title)
   end
+```
+
+A new show.js is created where the id **showTweet** will show the post in the Index.
+
+```javascript
+// posts/show.js.erb
+
+$('#showTweet').html('<%= escape_javascript render(@post, post: @post) %>');
 ```
 
 ### 3.3 Create
