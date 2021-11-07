@@ -142,7 +142,6 @@ To call a post with his id with AJAX, the new partial post is created as it foll
 # posts/_post.html.erb
 
 <tr id="post-<%= post.id %>">
-    <th scope="row">1</th>
     <td><%= post.id %></td>
     <td><%= post.title %></td>
     <td><%= post.content %></td>
