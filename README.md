@@ -313,7 +313,7 @@ The search bar is added to the beginning of the Index page as:
 <% end %>
 ```
 
-Then, a new partial for the searched posts is created:
+A new partial for the searched posts is created:
 
 ```ruby
 # posts/_posts.html.erb
@@ -328,6 +328,22 @@ Then, a new partial for the searched posts is created:
         <td><%= link_to 'Delete', post, method: :delete, remote: true, data: { confirm: "Are you sure to delete: #{post.title}?" }, class: 'btn btn-danger' %></td>
     </tr>
 <% end %>
+```
+
+Then, in the controller the search is done by the title and content of the posts: 
+
+```ruby
+class HomeController < ApplicationController
+  def index
+    @post = Post.new
+
+    @posts = "COALESCE(title, '') LIKE '%'"
+    unless params[:q].nil?
+      posts = "COALESCE(title, '') LIKE '%" + params[:q] + "%' OR COALESCE(content, '') LIKE '%" + params[:q] + "%'"
+    end
+    @posts = Post.where(posts)
+  end
+end
 ```
 
 Finally, the id **"posts"** from the Index will render the post searched by the keyword just as:
