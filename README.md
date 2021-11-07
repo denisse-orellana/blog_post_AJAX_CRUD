@@ -2,6 +2,10 @@
 
 This project presents a simple blog post developing the CRUD (Create, Read, Update and Delete) from zero with AJAX (Asynchronous JavaScript and XML) without the use of scaffold.
 
+## Website link
+
+The blog was deployed to Heroku and can be seen here: [Blog Post: AJAX CRUD](https://guarded-atoll-61749.herokuapp.com)
+
 ## Table of contents
 
 * [Ruby & Rails version](#ruby-&-rails-version)
