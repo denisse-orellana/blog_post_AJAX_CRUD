@@ -4,7 +4,7 @@ This project presents a simple blog post developing the CRUD (Create, Read, Upda
 
 ## Website link
 
-The blog was deployed to Heroku and can be seen here: [Blog Post: AJAX CRUD](https://guarded-atoll-61749.herokuapp.com)
+The blog was deployed to Heroku and can be seen from here: [Blog Post: AJAX CRUD](https://guarded-atoll-61749.herokuapp.com)
 
 ## Table of contents
 
