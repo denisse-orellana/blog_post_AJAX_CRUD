@@ -4,6 +4,8 @@ This project presents a simple blog post developing the CRUD (Create, Read, Upda
 
 ## Table of contents
 
+* [Ruby & Rails version](#ruby-&-rails-version)
+   + [Gems](#gems)
 * [1. Adding Bootstrap](#1-adding-bootstrap)
 * [2. Defining the model](#2-defining-the-model)
 * [3. Implementing the CRUD](#3-implementing-the-crud)
@@ -14,6 +16,19 @@ This project presents a simple blog post developing the CRUD (Create, Read, Upda
    + [3.5 Update](#35-update)
    + [3.6 Delete](#36-delete)
  * [4. Adding the Search bar](#4-adding-the-search-bar)
+
+## Ruby & Rails version 
+
+* ruby '2.6.1'
+* gem 'rails', '~> 5.2.6'
+
+### Gems 
+
+```ruby
+gem "bootstrap", "~> 5.1"
+gem "jquery-rails", "~> 4.4"
+gem "faker", "~> 2.19"
+```
 
 ## 1. Adding Bootstrap
 
