@@ -188,7 +188,7 @@ class PostsController < ApplicationController
   end
 ```
 
-A new show.js is created where the id **showTweet** will show the post in the Index.
+A new show.js is created where the id **"showTweet"** will show the post in the Index.
 
 ```javascript
 // posts/show.js.erb
@@ -197,6 +197,8 @@ $('#showTweet').html('<%= escape_javascript render(@post, post: @post) %>');
 ```
 
 ### 3.3 Create
+
+The create method is added as:
 
 ```ruby
 # posts_controller.rb
@@ -214,7 +216,19 @@ class PostsController < ApplicationController
 end
 ```
 
+The create.js will use the id **"posts"** from the Index to render the post just as:
+
+```javascript
+// posts/create.js.erb
+
+$('#posts').prepend('<%= j render(@post, post: @post) %>')
+$('#form').empty(500) 
+$('#button').show(500)
+```
+
 ### 3.4 Edit
+
+The edit method is added as:
 
 ```ruby
 # posts_controller.rb
@@ -227,7 +241,17 @@ class PostsController < ApplicationController
 end
 ```
 
+The edit.js will use the id **"form"** from the Index to render the form as:
+
+```javascript
+// posts/edit.js.erb
+
+$('#form').html('<%= escape_javascript render('posts/form') %>')
+```
+
 ### 3.5 Update 
+
+The update method is added as:
 
 ```ruby
 # posts_controller.rb
@@ -243,7 +267,18 @@ def update
 end
 ```
 
+The update.js will take each post by his id and will save the changes made:
+
+```javascript
+// posts/update.js.erb
+
+$('#form').empty(500);
+$('#post-<%= @post.id %>').replaceWith('<%= j render(@post, t: @post) %>')
+```
+
 ### 3.6 Delete
+
+The delete method is added as:
 
 ```ruby
 # posts_controller.rb
@@ -257,6 +292,14 @@ def destroy
       end
     end
 end
+```
+
+The destroy.js will delete the indicated post:
+
+```javascript
+// posts/update.js.erb
+
+$('#post-<%= @post.id %>').empty();
 ```
 
 ## 4. Adding the Search bar
