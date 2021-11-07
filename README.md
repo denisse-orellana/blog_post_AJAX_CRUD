@@ -55,7 +55,67 @@ rails g controller Post
 
 ## 3. Implementing the CRUD
 
+First, the routes are established as:
+
+```ruby
+Rails.application.routes.draw do
+  resources :posts
+  root 'home#index'
+end
+```
+
+Then, the form is added:
+
+```ruby
+# posts/_form.html.erb
+
+<%= form_with(model: @post, remote: true) do |form| %>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2> 
+            <ul>
+                <% @post.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+        <%= form.label :title, 'Title' %>
+        <%= form.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :content, 'Content' %>
+        <%= form.text_field :content, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit %>
+    </div>
+<% end %>
+```
+
+To call a post with his id with AJAX, the new partial post is created as it follows:
+
+```ruby
+# posts/_post.html.erb
+
+<tr id="post-<%= post.id %>">
+    <th scope="row">1</th>
+    <td><%= post.id %></td>
+    <td><%= post.title %></td>
+    <td><%= post.content %></td>
+    <td><%= link_to 'See', post, remote: true, class: 'btn btn-success' %></td>
+    <td><%= link_to 'Edit', edit_post_path(post), remote: true, class: 'btn btn-warning' %></td>
+    <td><%= link_to 'Delete', post, method: :delete, remote: true, data: { confirm: "Are you sure to delete: #{post.title}?" }, class: 'btn btn-danger' %></td>
+</tr>
+```
+
 ### 3.1 Index
+
+The Index of Home displays the list of posts. The posts are order from descending order in the controller as:
 
 ```ruby
 # home_controller.rb
@@ -67,6 +127,8 @@ class HomeController < ApplicationController
   end
 end
 ```
+
+In the HTML the information is seen as:
 
 ```html
 <!-- home/index.html.erb -->
@@ -158,6 +220,8 @@ end
 ### 3.5 Update 
 
 ```ruby
+# posts_controller.rb
+
 before_action :set_post, only: [:edit, :show, :update] 
 
 def update
@@ -172,6 +236,8 @@ end
 ### 3.6 Delete
 
 ```ruby
+# posts_controller.rb
+
 before_action :set_post, only: [:edit, :show, :update, :destroy] 
 
 def destroy
