@@ -1,4 +1,4 @@
 // To hide the form
 $('#form').empty(500);
 // To select the post id and change it
-$('#post-<%= @post.id %>').replaceWith('<%= j render(@post, t: @post) %>')
+$('#post-<%= @post.id %>').replaceWith('<%= j render(@post, post: @post) %>')
