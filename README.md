@@ -315,7 +315,7 @@ The update.js will take each post by his id and will save the changes made:
 // posts/update.js.erb
 
 $('#form').empty(500);
-$('#post-<%= @post.id %>').replaceWith('<%= j render(@post, t: @post) %>')
+$('#post-<%= @post.id %>').replaceWith('<%= j render(@post, post: @post) %>')
 ```
 
 ### 3.6 Delete
