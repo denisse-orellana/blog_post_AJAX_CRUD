@@ -235,7 +235,7 @@ A new show.js is created where the id **"showTweet"** will show the post in the 
 ```javascript
 // posts/show.js.erb
 
-$('#showTweet').html('<%= escape_javascript render(@post, post: @post) %>');
+$('#showTweet').html('<%= escape_javascript render('posts/show') %>');
 ```
 
 ### 3.3 Create
